@@ -64,9 +64,9 @@
     <a href="{{ url_for('fiche', item_id=item.id) }}" class="text-decoration-none text-dark">
       <div class="card h-100">
         {% if item.photo_recto %}
-          <img src="{{ url_for('static', filename='thumbs/' + item.photo_recto) }}" class="card-img-top" alt="recto">
+          <img src="{{ item.photo_recto }}" class="card-img-top" alt="recto">
         {% elif item.photo_verso %}
-          <img src="{{ url_for('static', filename='thumbs/' + item.photo_verso) }}" class="card-img-top" alt="verso">
+          <img src="{{ item.photo_verso }}" class="card-img-top" alt="verso">
         {% else %}
           <div class="img-placeholder"><i class="bi bi-bookmark"></i></div>
         {% endif %}
