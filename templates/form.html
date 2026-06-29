@@ -47,12 +47,17 @@
             </select>
           </div>
           <div class="col-12">
-            <label class="form-label">Propriétaire</label>
-            <input type="text" name="proprietaire" class="form-control" placeholder="Nom du propriétaire"
-                   value="{{ item.proprietaire if item else '' }}">
+            <label class="form-label">Appartement</label>
+            <input type="text" name="appartement" class="form-control" placeholder="ex: Bât. A, App. 12"
+                   value="{{ item.appartement if item else '' }}">
           </div>
           <div class="col-12">
-            <label class="form-label">Téléphone du propriétaire</label>
+            <label class="form-label">Colocataire(s)</label>
+            <input type="text" name="colocataires" class="form-control" placeholder="Nom(s) des colocataires"
+                   value="{{ item.colocataires if item else '' }}">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Téléphone</label>
             <input type="tel" name="tel_proprietaire" class="form-control" placeholder="ex: 06 12 34 56 78"
                    value="{{ item.tel_proprietaire if item else '' }}" inputmode="tel">
           </div>

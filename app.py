@@ -35,7 +35,8 @@ def init_db():
                     couleur TEXT,
                     race TEXT,
                     sexe TEXT,
-                    proprietaire TEXT,
+                    appartement TEXT,
+                    colocataires TEXT,
                     tel_proprietaire TEXT,
                     comportements TEXT,
                     notes TEXT,
@@ -157,7 +158,8 @@ def ajouter():
                     request.form.get("couleur", "").strip(),
                     request.form.get("race", "").strip(),
                     request.form.get("sexe", ""),
-                    request.form.get("proprietaire", "").strip(),
+                    request.form.get("appartement", "").strip(),
+                    request.form.get("colocataires", "").strip(),
                     request.form.get("tel_proprietaire", "").strip(),
                     tags_to_str(request.form.get("comportements", "")),
                     request.form.get("notes", "").strip(),
@@ -194,7 +196,7 @@ def modifier(item_id):
             with conn.cursor() as cur:
                 cur.execute("""
                     UPDATE chats SET photo=%s, nom=%s, couleur=%s, race=%s, sexe=%s,
-                    proprietaire=%s, tel_proprietaire=%s, comportements=%s, notes=%s
+                    appartement=%s, colocataires=%s, tel_proprietaire=%s, comportements=%s, notes=%s
                     WHERE id=%s
                 """, (
                     upload_field("photo", item["photo"]),
@@ -202,7 +204,8 @@ def modifier(item_id):
                     request.form.get("couleur", "").strip(),
                     request.form.get("race", "").strip(),
                     request.form.get("sexe", ""),
-                    request.form.get("proprietaire", "").strip(),
+                    request.form.get("appartement", "").strip(),
+                    request.form.get("colocataires", "").strip(),
                     request.form.get("tel_proprietaire", "").strip(),
                     tags_to_str(request.form.get("comportements", "")),
                     request.form.get("notes", "").strip(),
