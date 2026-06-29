@@ -43,6 +43,15 @@ def init_db():
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
             """)
+            # Migrations
+            for col, definition in [
+                ("appartement", "TEXT"),
+                ("colocataires", "TEXT"),
+            ]:
+                try:
+                    cur.execute(f"ALTER TABLE chats ADD COLUMN {col} {definition}")
+                except Exception:
+                    pass
 
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "webp"}
