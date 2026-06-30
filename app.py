@@ -110,8 +110,8 @@ def index():
             params = []
 
             if search:
-                conditions.append("(nom ILIKE %s OR couleur ILIKE %s OR race ILIKE %s OR proprietaire ILIKE %s OR notes ILIKE %s)")
-                params += [f"%{search}%"] * 5
+                conditions.append("(nom ILIKE %s OR couleur ILIKE %s OR race ILIKE %s OR colocataires ILIKE %s OR appartement ILIKE %s OR notes ILIKE %s)")
+                params += [f"%{search}%"] * 6
             if race:
                 conditions.append("race ILIKE %s")
                 params.append(f"%{race}%")
