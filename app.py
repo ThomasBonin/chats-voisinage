@@ -159,8 +159,8 @@ def ajouter():
         with get_db() as conn:
             with conn.cursor() as cur:
                 cur.execute("""
-                    INSERT INTO chats (photo, nom, couleur, race, sexe, proprietaire, tel_proprietaire, comportements, notes)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    INSERT INTO chats (photo, nom, couleur, race, sexe, appartement, colocataires, tel_proprietaire, comportements, notes)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     upload_field("photo"),
                     request.form.get("nom", "").strip(),
